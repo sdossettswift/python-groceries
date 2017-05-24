@@ -1,13 +1,28 @@
-<html>
+{% load staticfiles %}
+	<html>
 	<head>
 		<title> Grocery List </title>
 	</head>
-	
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="{% static 'materialize/bin/materialize.css' %}"  media="screen,projection"/>
+
 	<body>
 		<div>
 			<h1><a href=#>Grocery List</a></h1>
 		</div>
-	</body>
-	
 
+		<div>
+			{% for item in items %}
+			<div>
+				<h2>{{ item.item_name }}</h2>
+			</div>
+			{% endfor %}
+		</div>
+
+		<!--Import jQuery before materialize.js-->
+	 {% block footer %}
+			<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		  <script type="text/javascript" src="{% static 'materialize/bin/materialize.js' %}"></script>
+		{% endblock %}
+	</body>
 </html>
