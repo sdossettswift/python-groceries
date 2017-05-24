@@ -1,0 +1,19 @@
+{% extends 'groceries/base.html' %}
+
+{% block content %}
+<div class="item">
+  <h3><a href="/">{{ item.item_name }}</a></h3>
+  <ul>
+    <li>Added by {{ item.owner }} on {{ item.date_added}}</li>
+  </ul>
+  {% if item.completed %}
+     <ul>
+       <li> Obtained on {{ item.date_completed }}!</li>
+     </ul>
+  {% else %}
+  <ul>
+    <li> You need to go to the store! </li>
+  </ul>
+   {% endif %}
+</div>
+{% endblock %}
