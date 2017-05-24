@@ -34,7 +34,9 @@
 				<div class="card">
 					<div class="card-image">
 						<span class="card-title">Card Title</span>
-						<a class="btn-floating halfway-fab waves-effect waves-light teal"><i class="material-icons">add</i></a>
+            {% if user.is_authenticated %}
+  						<a href="{% url 'item_new' %}", class="btn-floating halfway-fab waves-effect waves-light teal"><i class="material-icons">add</i></a>
+            {% endif %}
 					</div>
 					<div class="card-content">
             {% block content %}

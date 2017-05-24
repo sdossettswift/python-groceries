@@ -5,7 +5,10 @@
   <h3><a href="/">{{ item.item_name }}</a></h3>
   <ul>
     <li>Added by {{ item.owner }} on {{ item.date_added}}</li>
-  </ul>
+      {% if user.is_authenticated %}
+        <a href="{% url 'item_new' %}", class="btn-floating halfway-fab waves-effect waves-light teal"><i class="material-icons">add</i></a>
+      {% endif %}
+    </ul>
   {% if item.completed %}
      <ul>
        <li> Obtained on {{ item.date_completed }}!</li>
