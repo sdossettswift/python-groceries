@@ -1,0 +1,8 @@
+{% extends 'groceries/base.html' %}
+{% block content %}
+	{% for store in stores %}
+		<div>
+			<li><a href="{% url 'store_detail' pk=store.pk %}">{{ store.store_name }}</a></li>
+		</div>
+	{% endfor %}
+{% endblock %}

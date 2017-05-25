@@ -21,9 +21,9 @@
 				</div>
 				<div class="nav-content">
 						<ul class="tabs tabs-transparent">
-			        <li class="tab"><a href="#test1">All</a></li>
-			        <li class="tab"><a class="active" href="#test2">Stores</a></li>
-			        <li class="tab"><a href="#test4">To-Do</a></li>
+			        <li class="tab"><a href="{% url 'item_list' %}">All</a></li>
+			        <li class="tab"><a href="{% url 'store_list'%}">Stores</a></li>
+			        <li class="tab"><a href="{% url 'to_do_list' %}">To-Do</a></li>
 			      </ul>
 	    	</div>
   		</nav>

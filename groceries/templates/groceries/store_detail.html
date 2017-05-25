@@ -1,0 +1,12 @@
+{% extends 'groceries/base.html' %}
+
+{% block content %}
+<div class="store">
+	<h3><a href="/"> {{ store.store_name }}</a></h3>
+	<ul>
+	{% if user.is_authenticated %}
+	<a class="btn btn-default" href="{% url 'store_edit' pk=store.pk %}"> Edit </a>
+	{% endif %}
+	</ul>
+</div>
+{% endblock %}

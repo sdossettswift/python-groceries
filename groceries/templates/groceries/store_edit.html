@@ -1,10 +1,9 @@
 {% extends 'groceries/base.html' %}
 
 {% block content %}
-	<h3> EDIT ITEM </h3>
+	<h3>Edit Store Details</h3>
 	<form method="POST" class="post-form">{% csrf_token %}
 		{{ form }}
 		<button type="submit" class="save btn btn-default">UPDATE</button>
 	</form>
-
 {% endblock%}
