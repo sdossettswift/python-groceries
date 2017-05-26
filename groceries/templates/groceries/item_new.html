@@ -1,13 +1,8 @@
 {% extends 'groceries/base.html' %}
 
 {% block content %}
-	<h1>Add An Item!</h1>
-	<form method="POST" class="post-form">{% csrf_token %}
-		{{ form.item_name }}
-		{{ form.store }}
-		{{ form.completed }}
 
-		<button type="submit" class="save btn btn-default">ADD</button>
-	</form>
+	<h1>Add An Item!</h1>
+	{% include 'groceries/item_form.html'%}
 
 {% endblock%}

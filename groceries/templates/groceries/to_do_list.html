@@ -1,13 +1,17 @@
 {% extends 'groceries/base.html' %}
 {% block content %}
 	{% for store in stores %}
-		<div>
-			<li><a href="{% url 'store_detail' pk=store.pk %}">{{ store.store_name }}</a></li>
+	<div class="card">
+		<div class="container">
+			<h2><a href="{% url 'store_detail' pk=store.pk %}">{{ store.store_name }}</a></h2>
+		</hr>
 			{% for item in store.item_set.all%}
 				<ul>
 					<li><a href="{% url 'item_detail' pk=item.pk %}">{{ item.item_name }}</a></li>
 				</ul>
 				{% endfor %}
 		</div>
+	</div>
+
 	{% endfor %}
 {% endblock %}

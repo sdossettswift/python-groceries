@@ -1,43 +1,29 @@
 {% load staticfiles %}
+
 	<html>
 	<head>
 		<title> Grocery List </title>
 	</head>
 		<!--Import materialize.css-->
-		<link type="text/css" rel="stylesheet" href="{% static 'materialize/bin/materialize.css' %}"  media="screen,projection"/>
 		<link rel="stylesheet" href="{% static 'css/groceries.css' %}"/>
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Roboto+Condensed" rel="stylesheet">
-		<!--Import jQuery before materialize.js-->
-	 {% block footer %}
-			<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-			<script type="text/javascript" src="{% static 'materialize/bin/materialize.js' %}"></script>
-		{% endblock %}
+		<!-- Compiled and minified CSS -->
+	   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 
+	   <!-- Compiled and minified JavaScript -->
+		 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+		 <script type="text/javascript">
+			  $(document).ready(function(){
+					$(".dropdown-button").dropdown();
+			  });
+		 </script>
 	<body>
-		<div>
-			<nav class="nav-extended">
-				<div class="nav-wrapper">
-					<a href="/" class="brand-logo">Grocery List</a>
-				</div>
-				<div class="nav-content">
-						<ul class="tabs tabs-transparent">
-			        <li class="tab"><a href="{% url 'item_list' %}">All</a></li>
-			        <li class="tab"><a href="{% url 'store_list'%}">Stores</a></li>
-			        <li class="tab"><a href="{% url 'to_do_list' %}">To-Do</a></li>
-			      </ul>
-	    	</div>
-  		</nav>
-		</div>
-
+	{% include "groceries/navbar.html" %}
 		<div class="row">
 			<div class="col s12 m6 offset-m3">
 				<div class="card">
-					<div class="card-image">
-						<span class="card-title">Card Title</span>
-            {% if user.is_authenticated %}
-  						<a href="{% url 'item_new' %}", class="btn-floating halfway-fab waves-effect waves-light teal"><i class="material-icons">add</i></a>
-            {% endif %}
-					</div>
 					<div class="card-content">
             {% block content %}
             {% endblock %}

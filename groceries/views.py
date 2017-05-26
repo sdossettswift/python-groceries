@@ -32,7 +32,7 @@ def item_new(request):
         form = ItemForm(request.POST)
         if form.is_valid():
             item = form.save(commit=False)
-            item.owner = request.use
+            item.owner = request.user
             item.date_added = timezone.now()
             item.save()
             return redirect('item_detail', pk=item.pk)
@@ -57,10 +57,12 @@ def item_edit(request, pk):
     item = get_object_or_404(Item, pk=pk)
     if request.method == "POST":
         form = ItemForm(request.POST, instance=item)
+
         if form.is_valid():
             item = form.save(commit=False)
             item.owner = request.user
-            item.date_added = timezone.now()
+            if item.completed:
+                item.complete()
             item.save()
             return redirect('item_detail', pk=item.pk)
     else:
