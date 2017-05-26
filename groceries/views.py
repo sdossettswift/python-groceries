@@ -12,6 +12,7 @@ def complete_item(request, pk):
     item.save()
     return redirect('to_do_list')
 
+
 def buy_again(request, pk):
     item = get_object_or_404(Item, pk=pk)
     item.completed = False
@@ -48,7 +49,7 @@ def item_new(request):
             item.owner = request.user
             item.date_added = timezone.now()
             item.save()
-            return redirect('to_do_list')
+            return redirect('/')
     else:
         form = ItemForm()
     return render(request, 'groceries/item_new.html', {'form': form})
@@ -69,6 +70,7 @@ def item_new_to_store(request, pk):
     else:
         form = ItemForm()
     return render(request, 'groceries/item_new.html', {'form': form})
+
 
 def store_new(request):
     if request.method == "POST":

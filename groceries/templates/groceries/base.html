@@ -21,15 +21,24 @@
 		 </script>
 	<body>
 	{% include "groceries/navbar.html" %}
-		<div class="row">
-			<div class="col s12 m6 offset-m3">
-				<div class="card">
-					<div class="card-content">
-            {% block content %}
-            {% endblock %}
+		<div class="container">
+			<div class="card" id="main-card">
+				<div class="row ">
+					<div class="col m3"></div>
+					<div class="col m6">
+						{% block content %}
+						{% endblock %}
+
+
 					</div>
+
 				</div>
+
+
+
 			</div>
+
+
 		</div>
 	</body>
 </html>

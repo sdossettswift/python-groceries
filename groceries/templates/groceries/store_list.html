@@ -5,9 +5,8 @@
 	<hr/>
 	<br/>
 	{% for store in stores %}
-		<div>
-			<a href="{% url 'store_detail' pk=store.pk %}"><h6>{{ store.store_name }} at {{ store.address}}</h6></a>
-		</div>
+	<div>
+		<li><a href="{% url 'store_detail' pk=store.pk %}">{{ store.store_name }}</a> - at  {{ store.address }}</li>
+	</div>
 	{% endfor %}
-
 {% endblock %}

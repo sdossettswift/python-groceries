@@ -5,7 +5,8 @@ from django.utils import timezone
 
 class Store(models.Model):
     store_name = models.CharField(max_length=20)
-    address = models.CharField(max_length=30)
+    address = models.CharField(max_length=30, null=True)
+    store_notes = models.CharField(max_length=300, null=True, blank=True)
 
     def __str__(self):
         return self.store_name
@@ -24,6 +25,8 @@ class Item(models.Model):
     item_name = models.CharField(max_length=50)
     date_added = models.DateTimeField(default=timezone.now)
     date_completed = models.DateTimeField(blank=False, null=True)
+    quantity = models.IntegerField(null=True, blank=True)
+    notes = models.CharField(max_length=200, null=True, blank=True)
 
     def complete(self):
         self.date_completed = timezone.now()
@@ -32,6 +35,3 @@ class Item(models.Model):
 
     def __str__(self):
         return self.item_name
-
-
-

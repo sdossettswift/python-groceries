@@ -1,20 +1,19 @@
 {% extends 'groceries/base.html' %}
 {% block content %}
+<a class="btn-floating btn-large waves-effect waves-right right primary" href="/item/new"><i class="material-icons">add</i></a>
+	<h3>Things To Get:</h3>
+	<hr/>
+	<br/>
 	{% for store in stores %}
 		{% if store.active_item_count > 0 %}
-				<div class="card">
-					<div class="container">
-						<h2><a href="{% url 'store_detail' pk=store.pk %}">{{ store.store_name }}</a></h2>
-						<h4>{{ store.address }}</h4>
-
+		<h4><a href="{% url 'store_detail' pk=store.pk %}"> {{ store.store_name }} - {{ store.address }}</a></h4>
+		<hr/>
 					</hr>
-					<ol>
+					<ul>
 							{% for item in store.active_items %}
-								<li><a href="{% url 'item_detail' pk=item.pk %}">{{ item.item_name }}</a></li>
+								<li><h6><a href="{% url 'item_detail' pk=item.pk %}">{{ item.item_name }}</a></h6></li>
 							{% endfor %}
-						</ol>
-					</div>
-				</div>
+						</ul>
 	{% endif %}
 	{% endfor %}
 {% endblock %}

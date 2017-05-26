@@ -12,7 +12,20 @@
               {{ form.item_name.label }}{% if form.item_name.help_text %} ({{ form.item_name.help_text }}){% endif %}
             </label>
       </div>
-      <div class="input-field col s12">
+			<div class="input-field col s12">
+				{{ form.quantity }}
+						<label for="{{ form.quantity.auto_id }}">
+							{{ form.quantity.label }}{% if form.quantity.help_text %} ({{ form.quantity.help_text }}){% endif %}
+						</label>
+			</div>
+			<div class="input-field col s12">
+				{{ form.notes }}
+						<label for="{{ form.notes.auto_id }}">
+							{{ form.notes.label }}{% if form.notes.help_text %} ({{ form.notes.help_text }}){% endif %}
+						</label>
+			</div>
+
+			<div class="input-field col s12">
         {{ form.completed }}
         <label for="{{ form.completed.auto_id }}">
          {{ form.completed.label }}{% if form.completed.help_text %} ({{ form.completed.help_text }}){% endif %}
