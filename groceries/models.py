@@ -7,6 +7,7 @@ class Store(models.Model):
     store_name = models.CharField(max_length=20)
     address = models.CharField(max_length=30, null=True)
     store_notes = models.CharField(max_length=300, null=True, blank=True)
+## w/ charFields add blank=True, null=True isn't needed -- w/out blank=True, form would still require input.
 
     def __str__(self):
         return self.store_name
@@ -32,6 +33,7 @@ class Item(models.Model):
         self.date_completed = timezone.now()
         self.completed = True
         self.save()
+        #instead of having completed as a model boolean field, just check to see if the attribute is true. 
 
     def __str__(self):
         return self.item_name
