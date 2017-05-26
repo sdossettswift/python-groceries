@@ -12,4 +12,6 @@ urlpatterns = [
         url(r'^store/new/$', views.store_new, name='store_new'),
         url(r'^store/(?P<pk>\d+)/edit/$', views.store_edit, name='store_edit'),
         url(r'^items$', views.item_list, name='item_list'),
+        url(r'^item/(?P<pk>\d+)/complete/$', views.complete_item, name='complete_item'),
+        url(r'^item/(?P<pk>\d+)/buy_again/$', views.buy_again, name='buy_again'),
 ]

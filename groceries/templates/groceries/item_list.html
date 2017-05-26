@@ -1,8 +1,12 @@
 {% extends 'groceries/base.html' %}
 {% block content %}
+<a class="btn-floating btn-large waves-effect waves-right right primary" href="/item/new"><i class="material-icons">add</i></a>
+	<h3> Favorite Groceries</h3>
+	<hr/>
+	<br/>
 	{% for item in items %}
 		<div>
-			<li><a href="{% url 'item_detail' pk=item.pk %}">{{ item.item_name }}</a></li>
+			<li><a href="{% url 'item_detail' pk=item.pk %}">{{ item.item_name }}</a> - from {{ item.store }}</li>
 		</div>
 	{% endfor %}
 {% endblock %}

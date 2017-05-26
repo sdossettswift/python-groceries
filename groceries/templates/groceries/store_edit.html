@@ -1,7 +1,10 @@
 {% extends 'groceries/base.html' %}
 
 {% block content %}
-	<h3>Edit Store Details</h3>
+<a class="btn-floating btn-large waves-effect waves-right right primary" href="/stores"><i class="material-icons">replay</i></a>
+	<h3>Update Favorite Stores</h3>
+	<hr/>
+	<br/>
 	<form method="POST" class="post-form">{% csrf_token %}
 		{{ form }}
 		<button type="submit" class="save btn btn-default">UPDATE</button>

@@ -2,11 +2,16 @@
 
 {% block content %}
 <div class="store">
-	<h3><a href="/"> {{ store.store_name }}</a></h3>
-	<ul>
+	<h3><a href="/"> {{ store.store_name }} at {{ store.address }}</a></h3>
+	<h6> Next time you are there, please pick up: </h6>
+	<ol>
+			{% for item in store.active_items %}
+				<li><a href="{% url 'item_detail' pk=item.pk %}">{{ item.item_name }}</a></li>
+			{% endfor %}
+		</ol>
 	{% if user.is_authenticated %}
-	<a class="btn btn-default" href="{% url 'store_edit' pk=store.pk %}"> Edit </a>
+	<a class="btn btn-default" href="{% url 'store_edit' pk=store.pk %}"> Edit Store Details</a>
+		<a class="btn btn-default" href="{% url 'item_new' %}"> Add Items to List</a>
 	{% endif %}
-	</ul>
 </div>
 {% endblock %}

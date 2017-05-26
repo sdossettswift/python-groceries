@@ -7,7 +7,12 @@
     <li>Added by {{ item.owner }} on {{ item.date_added}}</li>
       {% if user.is_authenticated %}
       <a class="btn btn-default" href="{% url 'item_edit' pk=item.pk %}">Edit</a>
-      {% endif %}
+        {% if item.completed %}
+        <a class="btn btn-default" href="{% url 'buy_again' pk=item.pk %}">Buy Again!</a>
+        {% else %}
+      <a class="btn btn-default" href="{% url 'complete_item' pk=item.pk %}"> Mark As Purchased!</a>
+        {% endif %}
+{% endif %}
     </ul>
   {% if item.completed %}
      <ul>

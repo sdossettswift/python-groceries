@@ -6,6 +6,19 @@ from .models import Store
 from .forms import StoreForm
 
 
+def complete_item(request, pk):
+    item = get_object_or_404(Item, pk=pk)
+    item.completed = True
+    item.save()
+    return redirect('to_do_list')
+
+def buy_again(request, pk):
+    item = get_object_or_404(Item, pk=pk)
+    item.completed = False
+    item.save()
+    return redirect('to_do_list')
+
+
 def store_list(request):
     stores = Store.objects.all()
     return render(request, 'groceries/store_list.html', {'stores': stores})
@@ -35,11 +48,27 @@ def item_new(request):
             item.owner = request.user
             item.date_added = timezone.now()
             item.save()
-            return redirect('item_detail', pk=item.pk)
+            return redirect('to_do_list')
     else:
         form = ItemForm()
     return render(request, 'groceries/item_new.html', {'form': form})
 
+
+def item_new_to_store(request, pk):
+    store = get_object_or_404(Item, pk=pk)
+    if request.method == "POST":
+        form = ItemForm(request.POST)
+        context['form'].initial['store'] = store
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.store = store.pk
+            item.owner = request.user
+            item.date_added = timezone.now()
+            item.save()
+            return redirect('to_do_list')
+    else:
+        form = ItemForm()
+    return render(request, 'groceries/item_new.html', {'form': form})
 
 def store_new(request):
     if request.method == "POST":

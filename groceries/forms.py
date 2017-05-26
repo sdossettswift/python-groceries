@@ -10,6 +10,7 @@ class ItemForm(forms.ModelForm):
         fields = ("item_name", "completed", "store")
 
 
+
 class StoreForm(forms.ModelForm):
     class Meta:
         model = Store
