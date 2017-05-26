@@ -10,6 +10,12 @@ class Store(models.Model):
     def __str__(self):
         return self.store_name
 
+    def active_items(self):
+        return self.item_set.filter(completed=False)
+
+    def active_item_count(self):
+        return self.item_set.filter(completed=False).count()
+
 
 class Item(models.Model):
     store = models.ForeignKey(Store, on_delete=models.CASCADE)
@@ -26,3 +32,6 @@ class Item(models.Model):
 
     def __str__(self):
         return self.item_name
+
+
+

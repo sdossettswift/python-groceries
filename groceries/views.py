@@ -85,6 +85,6 @@ def store_edit(request, pk):
 
 def to_do_list(request):
     stores = Store.objects.all()
-    items = Item.objects.all()
+    items = Store.item_set
     return render(request, 'groceries/to_do_list.html', {
             'stores': stores, 'items': items})
