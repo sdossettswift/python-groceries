@@ -5,7 +5,9 @@ from .forms import ItemForm
 from .models import Store
 from .forms import StoreForm
 
-
+# these are function based views, look into class based views 
+# template view, form view -- check these out 
+# base mixin -- ** 
 def complete_item(request, pk):
     item = get_object_or_404(Item, pk=pk)
     item.completed = True
