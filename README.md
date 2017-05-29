@@ -25,7 +25,7 @@
 
 ## Step Three: Update Settings in `sitename/settings.py`
 1. Timezone ('America/Chicago' will work for Central)-
-`TIME_ZONE='America/Chicago'`
+	`TIME_ZONE='America/Chicago'`
 1. Add path for static files (CSS,JS, etc.)
 	```
 	STATIC_URL = '/static'
