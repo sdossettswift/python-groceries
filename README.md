@@ -38,11 +38,13 @@
 1. Create Django App
 	- `python manage.py startapp appname`
 2. Add app to project in INSTALLED_APPS array in `sitename/settings.py`
-``` INSTALLED APPS= [
-		'django.contrib.admin',
-		[...]
-		'appname',
-]```
+```
+INSTALLED APPS= [
+	'django.contrib.admin',
+	[...]
+	'appname',
+]
+```
 
 # Reference
 
@@ -60,32 +62,33 @@
 
 ### Structure of a Django Directory
 	Run: `django-admin startproject sitename . `
-	```python
-	projectname
-	|____ manage.py
-	|____ sitename
-	      settings.py
-	      urls.py
-	      wsgi.py
-	      __init__.py
-	```
+
+		```
+		projectname
+		|____ manage.py
+		|____ sitename
+		      settings.py
+		      urls.py
+		      wsgi.py
+		      __init__.py
+		```
 	Run: `python manage.py startapp appname`
-	```python
-	projectname
-	├── appname
-	│   ├── __init__.py
-	│   ├── admin.py
-	│   ├── apps.py
-	│   ├── migrations
-	│   │   └── __init__.py
-	│   ├── models.py
-	│   ├── tests.py
-	│   └── views.py
-	├── db.sqlite3
-	├── manage.py
-	└── sitename
-	    ├── __init__.py
-	    ├── settings.py
-	    ├── urls.py
-	    └── wsgi.py
-	```
+		```
+		projectname
+		├── appname
+		│   ├── __init__.py
+		│   ├── admin.py
+		│   ├── apps.py
+		│   ├── migrations
+		│   │   └── __init__.py
+		│   ├── models.py
+		│   ├── tests.py
+		│   └── views.py
+		├── db.sqlite3
+		├── manage.py
+		└── sitename
+		    ├── __init__.py
+		    ├── settings.py
+		    ├── urls.py
+		    └── wsgi.py
+		```
