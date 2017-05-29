@@ -54,7 +54,7 @@ INSTALLED APPS= [
 	```
 1. define model:
 	```python
-	class Model(models.Model):
+	class Modelname(models.Model):
 		user = models.ForeignKey('auth.User')
 		string = models.CharField(max_length=200)
 		text = models.TexField()
@@ -68,11 +68,36 @@ INSTALLED APPS= [
 		def __str__(self):
 			return self.string
 	```
+1. [more field types](https://docs.djangoproject.com/en/1.10/ref/models/fields/#field-types)
+
+1. create the migration: `python manage.py makemigrations`
+1. run the migration: `python manage.py migrate`
+1. register the model within `appname/admin.py` if you want to be able to manage it via the admin panel
+	```python
+	from django.contrib import admin
+	from .models import Modelname
+
+	admin.site.register(Modelname)
+
+	```
+
+### DjangoAdmin
+1. create superuser: `python manage.py createsuperuser`
 
 ### URLs
 ### Views
 ### Templates
 ### Materialize
+### Gitignore
+```git
+	*.pyc
+	*~
+	__pycache__
+	pyenv (or whatever you name your virtualenv)
+	db.sqlite3
+	/static
+	.DS_Store
+```
 
 # Reference
 
@@ -87,6 +112,7 @@ INSTALLED APPS= [
 - Django
 	- `django-admin startproject sitename .`
 	- `python manage.py startapp appname`
+	- `python manage.py createsuperuser`
 
 ### Structure of a Django Directory
 - Run: `django-admin startproject sitename . `
@@ -113,6 +139,7 @@ projectname
 │   └── views.py
 ├── db.sqlite3
 ├── manage.py
+├── .gitignore (* need to create this manually)
 └── sitename
   ├── __init__.py
   ├── settings.py
