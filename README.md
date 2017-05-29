@@ -28,3 +28,23 @@ projectname
       wsgi.py
       __init__.py
 ```
+
+### Step Three: Update Settings in `sitename/settings.py`
+1. Timezone ('America/Chicago' will work for Central)- 
+`TIME_ZONE='America/Chicago'`
+1. Add path for static files (CSS,JS, etc.)
+```
+STATIC_URL = '/static'
+STATIC_ROOT = 'os.path.join(BASE_DIR, 'static')
+```
+1. other settings to modify may include: ALLOWED_HOSTS, DATABASES, etc. 
+
+### `python manage.py` Commands
+- Server
+	- `python manage.py runserver`
+- Migrations
+	- `python manage.py makemigrations`
+	- `python manage.py migrate` 
+- Shell
+	- `python manage.py shell`
+
