@@ -62,32 +62,32 @@ INSTALLED APPS= [
 
 ### Structure of a Django Directory
 - Run: `django-admin startproject sitename . `
-		```
-			projectname
-			|____ manage.py
-			|____ sitename
-			      settings.py
-			      urls.py
-			      wsgi.py
-			      __init__.py
-		```
+```
+projectname
+|____ manage.py
+|____ sitename
+      settings.py
+      urls.py
+      wsgi.py
+      __init__.py
+```
 - Run: `python manage.py startapp appname`
-			```
-			projectname
-			├── appname
-			│   ├── __init__.py
-			│   ├── admin.py
-			│   ├── apps.py
-			│   ├── migrations
-			│   │   └── __init__.py
-			│   ├── models.py
-			│   ├── tests.py
-			│   └── views.py
-			├── db.sqlite3
-			├── manage.py
-			└── sitename
-			    ├── __init__.py
-			    ├── settings.py
-			    ├── urls.py
-			    └── wsgi.py
-			```
+```
+projectname
+├── appname
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── db.sqlite3
+├── manage.py
+└── sitename
+  ├── __init__.py
+  ├── settings.py
+  ├── urls.py
+  └── wsgi.py
+```
