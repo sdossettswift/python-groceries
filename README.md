@@ -15,10 +15,14 @@
 - activate virtual environment: `source pyenv/bin/activate` where `pyenv` is the name of the virutal environment. 
 
 ### Step Two: Install Django 
-- `pip install --trusted-host pypi.python.org --upgrade pip` (may or may not be necessary)
-- `pip install --trusted-host pypi.python.org django~=1.10.0 ` || `pip install django=~1.10.0`
-
+- Upgrade pip
+	- `pip install --trusted-host pypi.python.org --upgrade pip` (may or may not be necessary)
+- Install Django
+	- `pip install --trusted-host pypi.python.org django~=1.10.0 ` || `pip install django=~1.10.0`
+- Create Django project
+	- `django-admin startproject sitename . `
 ### Structure of a Django Directory
+Run: `django-admin startproject sitename . `
 ```
 projectname
 |____ manage.py
@@ -27,6 +31,26 @@ projectname
       urls.py
       wsgi.py
       __init__.py
+```
+Run: `python manage.py startapp appname`
+```
+projectname
+├── appname
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── db.sqlite3
+├── manage.py
+└── sitename
+    ├── __init__.py
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
 ```
 
 ### Step Three: Update Settings in `sitename/settings.py`
@@ -39,7 +63,7 @@ projectname
 	```
 1. other settings to modify may include: ALLOWED_HOSTS, DATABASES, etc. 
 
-### `python manage.py` Commands
+### Reference: `python manage.py` Commands
 - Server
 	- `python manage.py runserver`
 - Migrations
@@ -47,4 +71,17 @@ projectname
 	- `python manage.py migrate` 
 - Shell
 	- `python manage.py shell`
+- Django 
+	- `django-admin startproject sitename .`
+	- `python manage.py startapp appname`
+
+### Step Four: Create Django App
+1. Create Django App
+	- `python manage.py startapp appname`
+2. Add app to project in INSTALLED_APPS array in `sitename/settings.py`
+	- ``` INSTALLED APPS= [
+		'django.contrib.admin', 
+		[...]
+		'appname',
+]```
 
