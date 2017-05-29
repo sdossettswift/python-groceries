@@ -45,6 +45,33 @@ INSTALLED APPS= [
 	'appname',
 ]
 ```
+## Step Five: Breathe Life into the App!
+### Models: `appname/models.py`
+1. import necessaries
+	```python
+	from django.db import models
+	from django.utils import timezone
+	```
+1. define model: 
+	```python
+	class Model(models.Model):
+		user = models.ForeignKey('auth.User')
+		string = models.CharField(max_lenght=200)
+		text = models.TexField()
+		created_date = models.DateTimeField(default = timezone.now)
+		action_date = models.DateTimeField(blank=True, null=True)
+		def action(self):
+			self.action_date = timezone.now()
+			self.save()
+
+		def __str__(self):
+			return self.string
+	```
+ 
+### URLs
+### Views
+### Templates
+### Materialize
 
 # Reference
 
