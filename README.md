@@ -10,11 +10,11 @@
 - Django 1.10
 
 
-### Step One: Set up and activate Virtual Environment
+## Step One: Set up and activate Virtual Environment
 - install virtualenv, but add pipy.python as a trusted host b/c of firewall settings: `pip install --trusted-host pypi.python.org virtualenv`
 - activate virtual environment: `source pyenv/bin/activate` where `pyenv` is the name of the virutal environment.
 
-### Step Two: Install Django
+## Step Two: Install Django
 - Upgrade pip
 	- `pip install --trusted-host pypi.python.org --upgrade pip` (may or may not be necessary)
 - Install Django
@@ -23,7 +23,7 @@
 	- `django-admin startproject sitename . `
 
 
-### Step Three: Update Settings in `sitename/settings.py`
+## Step Three: Update Settings in `sitename/settings.py`
 1. Timezone ('America/Chicago' will work for Central)-
 `TIME_ZONE='America/Chicago'`
 1. Add path for static files (CSS,JS, etc.)
@@ -34,7 +34,7 @@
 1. other settings to modify may include: ALLOWED_HOSTS, DATABASES, etc.
 
 
-### Step Four: Create Django App
+## Step Four: Create Django App
 1. Create Django App
 	- `python manage.py startapp appname`
 2. Add app to project in INSTALLED_APPS array in `sitename/settings.py`
