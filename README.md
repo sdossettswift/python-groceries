@@ -2,8 +2,8 @@
 
 ## Apps
 1. Groceries
-2. Polls - Django Tutorial
-3. Blog - Django Girls Tutorial
+2. Polls - [Django Tutorial](https://docs.djangoproject.com/en/1.11/intro/tutorial01/)
+3. Blog - [Django Girls Tutorial](https://tutorial.djangogirls.org/en/django_installation/)
 
 ## Requirements
 - This repo uses python 2.7,
