@@ -33,10 +33,10 @@ projectname
 1. Timezone ('America/Chicago' will work for Central)- 
 `TIME_ZONE='America/Chicago'`
 1. Add path for static files (CSS,JS, etc.)
-```
-STATIC_URL = '/static'
-STATIC_ROOT = 'os.path.join(BASE_DIR, 'static')
-```
+	```
+	STATIC_URL = '/static'
+	STATIC_ROOT = 'os.path.join(BASE_DIR, 'static')
+	```
 1. other settings to modify may include: ALLOWED_HOSTS, DATABASES, etc. 
 
 ### `python manage.py` Commands
