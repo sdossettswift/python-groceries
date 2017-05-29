@@ -61,7 +61,7 @@ INSTALLED APPS= [
 	- `python manage.py startapp appname`
 
 ### Structure of a Django Directory
-	Run: `django-admin startproject sitename . `
+- Run: `django-admin startproject sitename . `
 
 		```
 		projectname
@@ -72,7 +72,7 @@ INSTALLED APPS= [
 		      wsgi.py
 		      __init__.py
 		```
-	Run: `python manage.py startapp appname`
+- Run: `python manage.py startapp appname`
 		```
 		projectname
 		├── appname
