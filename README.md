@@ -1,13 +1,13 @@
 # python-sandbox
 
-## Grocery List
+## Apps
+1. Groceries
+2. Polls - Django Tutorial
+3. Blog - Django Girls Tutorial
 
-## Polls - Django Tutorial
-
-## Blog - Django Girls Tutorial
-
-## Django Takeaways
-- This repo uses python 2.7, django 1.10
+## Requirements
+- This repo uses python 2.7,
+- Django 1.10
 
 
 ### Step One: Set up and activate Virtual Environment
