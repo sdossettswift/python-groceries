@@ -146,3 +146,29 @@ projectname
   ├── urls.py
   └── wsgi.py
 ```
+
+## Shell Stuff
+1. start shell `python manage.py shell`
+1. import necessaries: 
+	```
+	>> import django
+	>> django.setup()
+	>> from django.utils import timezone
+	
+	```
+1. import models:
+	```
+	>>> from app.models import Modelname
+	```
+1. list objects:
+	```
+	>>> Modelname.objects.all()
+	```
+1. filter objects:
+	```
+	>>> Modelname.objects.get(field=value)
+	>>> Modelname.objects.filter(id=1)
+	```
+
+	```
+
