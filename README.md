@@ -87,9 +87,12 @@ INSTALLED APPS= [
 ### URLs
 1. Create app url file: `appname/urls.py`
 - import url configurations, app views:
-	```
+	```python
+	#appname/urls.py
+	
 	from django.conf.urls import url
 	from . import views
+	
 	
 	urlpatterns = [
 		url(r'^models/(?P<pk>\d+)/$', ClassViewModel.as_view(), name='route_name'), 	
