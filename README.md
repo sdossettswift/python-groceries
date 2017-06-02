@@ -85,6 +85,17 @@ INSTALLED APPS= [
 1. create superuser: `python manage.py createsuperuser`
 
 ### URLs
+1. Create app url file: `appname/urls.py`
+- import url configurations, app views:
+	```
+	from django.conf.urls import url
+	from . import views
+	
+	urlpatterns = [
+		url(r'^models/(?P<pk>\d+)/$', ClassViewModel.as_view(), name='route_name'), 	
+	]
+
+	```
 ### Views
 ### Templates
 ### Materialize
