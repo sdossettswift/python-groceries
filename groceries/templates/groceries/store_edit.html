@@ -6,7 +6,6 @@
 	<hr/>
 	<br/>
 	<form method="POST" class="post-form">{% csrf_token %}
-		{{ form }}
-		<button type="submit" class="save btn btn-default">UPDATE</button>
+			{% include 'groceries/store_form.html'%}
 	</form>
 {% endblock%}

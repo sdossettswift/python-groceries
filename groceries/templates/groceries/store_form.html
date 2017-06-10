@@ -1,4 +1,4 @@
-{# <script type="text/javascript">
+<script type="text/javascript">
 	$(document).ready(function() {
 		 $('select').material_select();
 	 });
@@ -7,15 +7,15 @@
 <form method="POST" class="post-form">
   {% csrf_token %}
       <div class="input-field col s12">
-        {{ form.item_name }}
-            <label for="{{ form.item_name.auto_id }}">
-              {{ form.item_name.label }}{% if form.item_name.help_text %} ({{ form.item_name.help_text }}){% endif %}
+        {{ form.store_name }}
+            <label for="{{ form.store_name.auto_id }}">
+              {{ form.store_name.label }}{% if form.store_name.help_text %} ({{ form.store_name.help_text }}){% endif %}
             </label>
       </div>
       <div class="input-field col s12">
-	        {{ form.completed }}
-	        <label for="{{ form.completed.auto_id }}">
-	         {{ form.completed.label }}{% if form.completed.help_text %} ({{ form.completed.help_text }}){% endif %}
+	        {{ form.address }}
+	        <label for="{{ form.address.auto_id }}">
+	         {{ form.address.label }}{% if form.address.help_text %} ({{ form.address.help_text }}){% endif %}
 	        </label>
 	        </br>
 	      </br>
@@ -34,4 +34,4 @@
         <label for="{{form.store.auto_id}}">{{form.store.label}}</label>
       </div>
   <button type="submit" name="_submit">Save</button>
-</form>#}
+</form>
