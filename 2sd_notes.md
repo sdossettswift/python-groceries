@@ -37,4 +37,31 @@
 - Make sure to import explicit relative imports as opposed to hardcoded imports 
    bad:  ``from cones.models import WaffleCone``
    good: ``from .models import WaffleCone``
+- Void using `import *`, instead, import everything explicitly, i.e., `from django import forms`, `from django.db import models` 
+### Underscores >> Dashes
+- use underscores over dashes, it is the python way
+	- urls
+	- template block names
+### Other Style Guides
+1. idiomatic.js(https://github.com/rwaldron/idiomatic.js/) 
+1. pragmatic.js(https://github.com/madrobby/pragmatic.js)
+1. airbnb js styleguide(https://github.com/felixge/node-style-guide)
+1. idiomatic css(https://github.com/necolas/idiomatic-css)
+1. code guide for html & css (http://codeguide.co)
+
+## Setting Up Django Environment 
+### Use same db everywhere
+- Makes life easier
+- Deal w/ the same constraints everywhere
+- PostgreSQL works well for development, production, staging, etc. 
+- Fixtures aren't a cureall to abstract differences away for different production/development dbs
+- PIP - python package index - manages installation of python packages
+- Virtualenv - creates isolated python environments to manage dependencies, etc. 
+- Use a virtualenvwarpper to activate virtual environment (http://virtualenvwrapper.readthedocs.io/en/latest/)
+### Next Level:
+1. Using Isolated Docker Containers
+1. Vagrant and VirtualBox
+1. Identical Environments
+
+1. 
 
